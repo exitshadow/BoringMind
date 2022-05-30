@@ -57,7 +57,7 @@ namespace BoringMind
 
                 Console.WriteLine("Ok!");
                 Console.WriteLine();
-                Console.WriteLine("You picked:");
+                Console.WriteLine("Current pick:");
                 Console.WriteLine();
                 Console.SetCursorPosition(i * 3, 21);
                 Display.PrintColor(userGuesses[i]);

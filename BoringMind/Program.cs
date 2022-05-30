@@ -64,8 +64,7 @@ namespace BoringMind
                 //}
 
                 #region displaySelection
-                // erases placeholder selection and shows full selection
-                // perhaps isn’t needed
+                Display.DisplayGuesses(numberofGuesses, userGuesses);
                 #endregion
 
                 #region displayHints
