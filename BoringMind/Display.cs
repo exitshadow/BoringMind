@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace BoringMind
 {
     // the essence of this boring game.
-    public enum BM_Color { White=1, Red, Green, Blue, Yellow, Cyan, Pink, Gray};
+    public enum Color { White=1, Red, Green, Blue, Yellow, Cyan, Pink, Gray};
 
     // stale tentatives to write the ascii title letter per letter
     // but the verbatim fucks everything up
-    struct AsciiShitLeftThereu
+    struct AsciiShitLeftThere
     {
         public string[,] AsciiLettersParsing(string asciiTitle, int letterCount)
         {
@@ -66,7 +66,7 @@ namespace BoringMind
         public int displayHeight;
 
         // writes the ASCII title with rainbowed lines
-        public void RainbowTitleWrite(string asciiTitle)
+        public static void RainbowTitleWrite(string asciiTitle)
         {
             //bmColorList[] rainbows =  { bmColorList.Yellow, bmColorList.Red, bmColorList.Pink, bmColorList.Blue, bmColorList.Cyan, bmColorList.Green };
             string[] rainbowLines = asciiTitle.Split("\n");
@@ -79,32 +79,32 @@ namespace BoringMind
         }
 
         // prints the color dots!
-        public static void PrintColor(BM_Color args)
+        public static void PrintColor(Color args)
         {
             switch (args)
             {
-                case BM_Color.White:
+                case Color.White:
                     Console.ForegroundColor = ConsoleColor.White;
                     break;
-                case BM_Color.Red:
+                case Color.Red:
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
-                case BM_Color.Green:
+                case Color.Green:
                     Console.ForegroundColor = ConsoleColor.Green;
                     break;
-                case BM_Color.Blue:
+                case Color.Blue:
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
                     break;
-                case BM_Color.Yellow:
+                case Color.Yellow:
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
-                case BM_Color.Cyan:
+                case Color.Cyan:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     break;
-                case BM_Color.Pink:
+                case Color.Pink:
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     break;
-                case BM_Color.Gray:
+                case Color.Gray:
                     Console.ForegroundColor = ConsoleColor.Gray;
                     break;
                 default:
