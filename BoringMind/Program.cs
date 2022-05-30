@@ -54,7 +54,9 @@ namespace BoringMind
                 Console.WriteLine();
                 Console.WriteLine();
 
-                List<Color> comparedCodes = Logic.CompareCodes(userGuesses, computerCode);
+                List<Color> comparedCodes = new List<Color>();
+
+                Logic.CompareCodes(userGuesses, computerCode, out hasWon, out comparedCodes);
 
                 Console.WriteLine("Computer picked:");
                 foreach(Color color in computerCode)
@@ -71,6 +73,7 @@ namespace BoringMind
 
                 Console.WriteLine();
 
+                // TODO
                 // create interface for player to pick their colors
                 // using the color enum
                 // see if PickColors structure can be used
@@ -79,10 +82,13 @@ namespace BoringMind
                 // apply color displays
 
                 // refine the whole user interface with pretty display
+
                 #endregion
 
             } while (!hasWon);
-            
+
+            Console.WriteLine();
+            Console.WriteLine("Yipee, you won!");
             Console.ReadKey(true);
 
         }

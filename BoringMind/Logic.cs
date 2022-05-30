@@ -99,9 +99,10 @@ namespace BoringMind
         //      - a white peg says there is a good color in the wrong place
         //      (is this assigned to fit the pattern or just in the disorder?)
         //      => the order as follows: red pegs first, white pegs after.
-        public static List<Color> CompareCodes(Color[] userGuesses, Color[] computerCode)
+        public static void CompareCodes(Color[] userGuesses, Color[] computerCode, out bool hasWon, out List<Color> comparisons)
         {
-            List<Color> comparisons = new List<Color>();
+            hasWon = false;
+            comparisons = new List<Color>();
             comparisons.Clear();
             int counter = 0;
 
@@ -125,9 +126,8 @@ namespace BoringMind
 
             if (counter == 4)
             {
-                Console.WriteLine("Eh, you won!");
+                hasWon = true;
             }
-            return comparisons;
         }
     }
 }
