@@ -127,13 +127,14 @@ namespace BoringMind
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     break;
                 case Color.Gray:
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Black;
                     break;
             }
             Console.Write(" ● ");
+            Console.ResetColor();
         }
     }
 

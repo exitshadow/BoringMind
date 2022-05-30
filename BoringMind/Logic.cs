@@ -44,12 +44,7 @@ namespace BoringMind
 
             do
             {
-                // this is to refactor with a SelectColors() method from Menu struct
                 #region SelectColors
-                int currentIndex = 2;
-
-                Console.WriteLine("Pick a color from the list here:");
-
                 Menu.ColorSelectorIterator();
 
                 Console.WriteLine();
