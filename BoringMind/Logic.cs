@@ -87,6 +87,8 @@ namespace BoringMind
 
                 Console.WriteLine("Ok!");
                 Console.WriteLine();
+                Console.SetCursorPosition(i * 3, 25);
+                Display.PrintColor(userGuesses[i]);
             }
 
             return userGuesses;
