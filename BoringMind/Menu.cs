@@ -13,6 +13,7 @@ namespace BoringMind
         {
             //Color userColor;
             int colorIndex = 0;
+            Console.WriteLine();
 
             foreach (Color color in Enum.GetValues(typeof(Color)))
             {
@@ -33,12 +34,18 @@ namespace BoringMind
                     Display.PrintColor(color);
                     Console.Write(@"    ");
                 }
-
-                
-
             }
 
             //return userColor;
+        }
+
+        public static void ColorSelectorIterator()
+        {
+            for (int i = 1; i <= 9; i++)
+            {
+                Menu.ColorSelector(i);
+            }
+            Console.WriteLine();
         }
     }
 }
