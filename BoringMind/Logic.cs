@@ -53,13 +53,15 @@ namespace BoringMind
                         Console.WriteLine();
                         userGuesses[i] = Menu.ColorSelectorIterator();
                     }
-
                 }
 
                 Console.WriteLine("Ok!");
                 Console.WriteLine();
-                Console.SetCursorPosition(i * 3, 25);
+                Console.WriteLine("You picked:");
+                Console.WriteLine();
+                Console.SetCursorPosition(i * 3, 21);
                 Display.PrintColor(userGuesses[i]);
+
             }
 
             return userGuesses;

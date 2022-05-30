@@ -77,8 +77,6 @@ namespace BoringMind
                     selectedIndex = 8;
                 }
 
-                Console.WriteLine(selectedIndex);
-
             } while (!exitColors);
 
             Console.WriteLine();

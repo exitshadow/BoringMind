@@ -51,50 +51,37 @@ namespace BoringMind
                 Color[] userGuesses = Logic.GuessCode();
 
                 Console.WriteLine();
-                Console.WriteLine($"You picked:");
-
-                foreach(Color color in userGuesses)
-                {
-                    Display.PrintColor(color);
-                }
-
-                Console.WriteLine();
                 Console.WriteLine();
 
                 List<Color> comparedCodes = new List<Color>();
 
                 Logic.CompareCodes(userGuesses, computerCode, out hasWon, out comparedCodes);
 
-                Console.WriteLine("Computer picked:");
-                foreach(Color color in computerCode)
-                {
-                    Display.PrintColor(color);
-                }
+                //Console.WriteLine("Computer picked:");
+                //foreach(Color color in computerCode)
+                //{
+                //    Display.PrintColor(color);
+                //}
 
-                Console.WriteLine();
-                Console.WriteLine("Hints:");
-                foreach(Color color in comparedCodes)
-                {
-                    Display.PrintColor(color);
-                }
+                #region displaySelection
+                // erases placeholder selection and shows full selection
+                // perhaps isn’t needed
+                #endregion
 
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine($"You have {12 - numberofGuesses} guesses remaining.");
-
-                // TODO
-                // create interface for player to pick their colors
-                // using the color enum
-                // see if PickColors structure can be used
-
-
-                // apply color displays
-
-                // refine the whole user interface with pretty display
+                #region displayHints
+                Display.DisplayHints(numberofGuesses, comparedCodes);
 
                 #endregion
 
+                #region displayRemainingGuesses
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"You have {12 - numberofGuesses} guesses remaining.");
+                #endregion
+
+
             } while (!hasWon);
+            #endregion
 
             Console.WriteLine();
 

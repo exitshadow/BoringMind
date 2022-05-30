@@ -136,6 +136,17 @@ namespace BoringMind
             Console.Write(" ● ");
             Console.ResetColor();
         }
+        public static void DisplayHints(int numberOfGuesses, List<Color>comparedCodes)
+        {
+            Console.SetCursorPosition(20, 15 + (5 * numberOfGuesses));
+            Console.WriteLine("Hints:");
+            Console.SetCursorPosition(20, 15 + (5 * numberOfGuesses) + 1);
+            foreach (Color color in comparedCodes)
+            {
+                Display.PrintColor(color);
+            }
+        }
     }
+
 
 }
