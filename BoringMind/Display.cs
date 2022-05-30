@@ -160,6 +160,23 @@ namespace BoringMind
             Console.SetCursorPosition(40, 22 + (2 * numberOfGuesses));
             Console.WriteLine($"{12 - numberOfGuesses} guesses remaining.");
         }
+
+        public static void DisplayComputerControl(int numberOfGuesses, Color[] computerCode, bool hasLost)
+        {
+            if (!hasLost)
+            {
+                Console.SetCursorPosition(70, 21 + (2 * numberOfGuesses));
+                Console.WriteLine("<debug> Computer Control");
+                Console.SetCursorPosition(70, 21 + (2 * numberOfGuesses) + 1);
+
+            }
+            Console.WriteLine("The answer was: ");
+            Console.WriteLine();
+            foreach (Color color in computerCode)
+            {
+                Display.PrintColor(color);
+            }
+        }
     }
 
 

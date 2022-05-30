@@ -49,21 +49,34 @@ namespace BoringMind
                     {
                         if (j == i) break;
                         j = 0;
+
+                        Console.SetCursorPosition(0, 18);
+                        Console.WriteLine("                                    ");
+                        Console.SetCursorPosition(0, 18);
                         Console.WriteLine("Oopsie, you already picked that one.");
                         Console.WriteLine();
+
                         userGuesses[i] = Menu.ColorSelectorIterator();
                     }
                 }
 
+                Console.SetCursorPosition(0, 18);
+                Console.WriteLine("                                    ");
+                Console.SetCursorPosition(0, 18);
                 Console.WriteLine("Ok!");
                 Console.WriteLine();
+
                 Console.WriteLine("Current pick:");
-                Console.WriteLine();
+                Console.SetCursorPosition(i * 3, 21);
+                Console.WriteLine("                           ");
                 Console.SetCursorPosition(i * 3, 21);
                 Display.PrintColor(userGuesses[i]);
 
             }
 
+            Console.SetCursorPosition(0, 21);
+            Console.WriteLine("                           ");
+            
             return userGuesses;
         }
 

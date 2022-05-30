@@ -33,33 +33,27 @@ namespace BoringMind
             {
                 if (numberofGuesses > 11)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("You lost, you looser.");
+                    Display.DisplayComputerControl(numberofGuesses, computerCode, true);
                     break;
                 }
                 numberofGuesses++;
 
                 Color[] userGuesses = Logic.GuessCode();
 
-                Console.WriteLine();
-                Console.WriteLine();
-
                 List<Color> comparedCodes = new List<Color>();
 
                 Logic.CompareCodes(userGuesses, computerCode, out hasWon, out comparedCodes);
 
-                //Console.WriteLine("Computer picked:");
-                //foreach(Color color in computerCode)
-                //{
-                //    Display.PrintColor(color);
-                //}
+
+                //Display.DisplayComputerControl(numberofGuesses, computerCode);
 
                 Display.DisplayGuesses(numberofGuesses, userGuesses);
 
                 Display.DisplayHints(numberofGuesses, comparedCodes);
 
-                #region displayRemainingGuesses
                 Display.DisplayRemainingGuesses(numberofGuesses);
-                #endregion
 
 
             } while (!hasWon);
