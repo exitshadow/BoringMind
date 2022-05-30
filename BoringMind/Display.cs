@@ -76,7 +76,7 @@ namespace BoringMind
                          You’ll have to break the computer code in 12 guesses.
                                      Your adventure starts now.
                                                   ";
-            //string titleLenght = @"    ___       ___       ___       ___       ___       ___       ___       ___       ___       ___   ";
+            string titleLenght = @"    ___       ___       ___       ___       ___       ___       ___       ___       ___       ___   ";
 
             Display.RainbowTitleWrite(prompt);
         }
@@ -91,7 +91,6 @@ namespace BoringMind
         // writes the ASCII title with rainbowed lines
         public static void RainbowTitleWrite(string asciiTitle)
         {
-            //bmColorList[] rainbows =  { bmColorList.Yellow, bmColorList.Red, bmColorList.Pink, bmColorList.Blue, bmColorList.Cyan, bmColorList.Green };
             string[] rainbowLines = asciiTitle.Split("\n");
             for (int i = 0; i < rainbowLines.Length; i++)
             {
@@ -135,7 +134,6 @@ namespace BoringMind
                     break;
             }
             Console.Write(" ● ");
-            Console.ResetColor();
         }
     }
 

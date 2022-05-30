@@ -50,7 +50,7 @@ namespace BoringMind
 
                 Console.WriteLine("Pick a color from the list here:");
 
-                Menu.SelectColors(currentIndex);
+                Menu.ColorSelector(currentIndex);
 
                 Console.WriteLine();
 

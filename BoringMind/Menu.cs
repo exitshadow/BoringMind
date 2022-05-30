@@ -9,7 +9,7 @@ namespace BoringMind
     public struct Menu
     {
         // displays all colors in the enum Color and allows to navigate between
-        public static void SelectColors(int currentIndex)
+        public static void ColorSelector(int currentIndex)
         {
             //Color userColor;
             int colorIndex = 0;
@@ -19,10 +19,22 @@ namespace BoringMind
                 colorIndex++;
                 if (colorIndex == currentIndex)
                 {
-                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("[");
+                    Console.ResetColor();
+                    Display.PrintColor(color);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("]");
+                    Console.ResetColor();
+                    Console.Write(@"    ");
+                } else
+                {
+                    Console.ResetColor();
+                    Display.PrintColor(color);
+                    Console.Write(@"    ");
                 }
 
-                Display.PrintColor(color);
+                
 
             }
 
