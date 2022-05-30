@@ -44,15 +44,18 @@ namespace BoringMind
 
             do
             {
-                //Console.SetCursorPosition(0, 10);
+                // this is to refactor with a SelectColors() method from Menu struct
+                #region SelectColors
+                int currentIndex = 2;
+
                 Console.WriteLine("Pick a color from the list here:");
-                foreach (Color color in Enum.GetValues(typeof(Color)))
-                {
-                    Display.PrintColor(color);
-                }
+
+                Menu.SelectColors(currentIndex);
+
                 Console.WriteLine();
 
                 str_userGuess = Console.ReadLine();
+                #endregion
 
                 if (!Enum.TryParse<Color>(str_userGuess, out userColor))
                 {
@@ -116,6 +119,7 @@ namespace BoringMind
                         if (i == j)
                         {
                             // it isn’t working when the index is 0 0
+                            // yes it’s working? not understanding this shit!!
                             comparisons.Add(Color.Red);
                             counter++;
                         } else

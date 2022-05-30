@@ -31,18 +31,26 @@ namespace BoringMind
 
             #region initializing
             Console.Clear();
-            Display.RainbowTitleWrite(title);
+            Assets.RainbowWritePrompt();
 
             Color[] computerCode = Logic.RNG_ComputerCode();
             bool hasWon = false;
+            int numberofGuesses = 0;
             #endregion
 
             #region game loop
             do
             {
+                if (numberofGuesses > 11)
+                {
+                    Console.WriteLine("You lost, you looser.");
+                    break;
+                }
+                numberofGuesses++;
+
                 Color[] userGuesses = Logic.GuessCode();
 
-                Console.WriteLine("Good, you did it all! :clappingkitty:");
+                Console.WriteLine();
                 Console.WriteLine($"You picked:");
 
                 foreach(Color color in userGuesses)
@@ -71,6 +79,8 @@ namespace BoringMind
                 }
 
                 Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"You have {12 - numberofGuesses} guesses remaining.");
 
                 // TODO
                 // create interface for player to pick their colors
@@ -87,7 +97,11 @@ namespace BoringMind
             } while (!hasWon);
 
             Console.WriteLine();
-            Console.WriteLine("Yipee, you won!");
+
+            if(hasWon)
+            {
+                Console.WriteLine("Yipee, you won!");
+            }
             Console.ReadKey(true);
 
         }

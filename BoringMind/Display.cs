@@ -59,6 +59,29 @@ namespace BoringMind
         }
     }
 
+    public struct Assets
+    {
+        public static void RainbowWritePrompt()
+        {
+            string prompt = @"
+    ___       ___       ___       ___       ___       ___       ___       ___       ___       ___   
+   /\  \     /\  \     /\  \     /\  \     /\__\     /\  \     /\__\     /\  \     /\__\     /\  \  
+  /::\  \   /::\  \   /::\  \   _\:\  \   /:| _|_   /::\  \   /::L_L_   _\:\  \   /:| _|_   /::\  \ 
+ /::\:\__\ /:/\:\__\ /::\:\__\ /\/::\__\ /::|/\__\ /:/\:\__\ /:/L:\__\ /\/::\__\ /::|/\__\ /:/\:\__\
+ \:\::/  / \:\/:/  / \;:::/  / \::/\/__/ \/|::/  / \:\:\/__/ \/_/:/  / \::/\/__/ \/|::/  / \:\/:/  /
+  \::/  /   \::/  /   |:\/__/   \:\__\     |:/  /   \::/  /    /:/  /   \:\__\     |:/  /   \::/  / 
+   \/__/     \/__/     \|__|     \/__/     \/__/     \/__/     \/__/     \/__/     \/__/     \/__/  
+
+                          Welcome to one of the most boring games ever made!
+                         You’ll have to break the computer code in 12 guesses.
+                                     Your adventure starts now.
+                                                  ";
+            //string titleLenght = @"    ___       ___       ___       ___       ___       ___       ___       ___       ___       ___   ";
+
+            Display.RainbowTitleWrite(prompt);
+        }
+    }
+
     // all methods useful to display cool stuff in neat formatting
     public struct Display
     {
