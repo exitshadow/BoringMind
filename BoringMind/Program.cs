@@ -40,7 +40,6 @@ namespace BoringMind
             #region game loop
             do
             {
-
                 Color[] userGuesses = Logic.GuessCode();
 
                 Console.WriteLine("Good, you did it all! :clappingkitty:");

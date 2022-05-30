@@ -44,6 +44,7 @@ namespace BoringMind
 
             do
             {
+                //Console.SetCursorPosition(0, 10);
                 Console.WriteLine("Pick a color from the list here:");
                 foreach (Color color in Enum.GetValues(typeof(Color)))
                 {
@@ -114,6 +115,7 @@ namespace BoringMind
                     {
                         if (i == j)
                         {
+                            // it isn’t working when the index is 0 0
                             comparisons.Add(Color.Red);
                             counter++;
                         } else
