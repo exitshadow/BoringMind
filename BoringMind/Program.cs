@@ -9,16 +9,6 @@ namespace BoringMind
         static void Main(string[] args)
         {
             #region setup displays
-            string title = @"
-    ___       ___       ___       ___       ___       ___       ___       ___       ___       ___   
-   /\  \     /\  \     /\  \     /\  \     /\__\     /\  \     /\__\     /\  \     /\__\     /\  \  
-  /::\  \   /::\  \   /::\  \   _\:\  \   /:| _|_   /::\  \   /::L_L_   _\:\  \   /:| _|_   /::\  \ 
- /::\:\__\ /:/\:\__\ /::\:\__\ /\/::\__\ /::|/\__\ /:/\:\__\ /:/L:\__\ /\/::\__\ /::|/\__\ /:/\:\__\
- \:\::/  / \:\/:/  / \;:::/  / \::/\/__/ \/|::/  / \:\:\/__/ \/_/:/  / \::/\/__/ \/|::/  / \:\/:/  /
-  \::/  /   \::/  /   |:\/__/   \:\__\     |:/  /   \::/  /    /:/  /   \:\__\     |:/  /   \::/  / 
-   \/__/     \/__/     \|__|     \/__/     \/__/     \/__/     \/__/     \/__/     \/__/     \/__/  
-
-";
             string titleLenght = @"    ___       ___       ___       ___       ___       ___       ___       ___       ___       ___   
 ";
             Console.Title = "B O R I N G M I N D";
@@ -63,19 +53,12 @@ namespace BoringMind
                 //    Display.PrintColor(color);
                 //}
 
-                #region displaySelection
                 Display.DisplayGuesses(numberofGuesses, userGuesses);
-                #endregion
 
-                #region displayHints
                 Display.DisplayHints(numberofGuesses, comparedCodes);
 
-                #endregion
-
                 #region displayRemainingGuesses
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine($"You have {12 - numberofGuesses} guesses remaining.");
+                Display.DisplayRemainingGuesses(numberofGuesses);
                 #endregion
 
 

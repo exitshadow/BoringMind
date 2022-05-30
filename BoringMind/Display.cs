@@ -94,7 +94,7 @@ namespace BoringMind
             string[] rainbowLines = asciiTitle.Split("\n");
             for (int i = 0; i < rainbowLines.Length; i++)
             {
-                Console.ForegroundColor = (ConsoleColor)((i % 12) +1);
+                Console.ForegroundColor = (ConsoleColor)((i % 12) + 1);
                 Console.WriteLine(rainbowLines[i]);
             }
             Console.ResetColor();
@@ -137,26 +137,28 @@ namespace BoringMind
             Console.ResetColor();
         }
 
-        public static void DisplayGuesses(int numberOfGuesses, Color[]userGuesses)
+        public static void DisplayGuesses(int numberOfGuesses, Color[] userGuesses)
         {
-            Console.SetCursorPosition(0, 20 + (5 * numberOfGuesses));
-            Console.WriteLine("You picked:");
-            Console.SetCursorPosition(0, 20 + (5 * numberOfGuesses) + 1);
+            Console.SetCursorPosition(0, 22 + (2 * numberOfGuesses));
             foreach (Color color in userGuesses)
             {
                 Display.PrintColor(color);
             }
         }
 
-        public static void DisplayHints(int numberOfGuesses, List<Color>comparedCodes)
+        public static void DisplayHints(int numberOfGuesses, List<Color> comparedCodes)
         {
-            Console.SetCursorPosition(20, 20 + (5 * numberOfGuesses));
-            Console.WriteLine("Hints:");
-            Console.SetCursorPosition(20, 20 + (5 * numberOfGuesses) + 1);
+            Console.SetCursorPosition(20, 22 + (2 * numberOfGuesses));
             foreach (Color color in comparedCodes)
             {
                 Display.PrintColor(color);
             }
+        }
+
+        public static void DisplayRemainingGuesses(int numberOfGuesses)
+        {
+            Console.SetCursorPosition(40, 22 + (2 * numberOfGuesses));
+            Console.WriteLine($"{12 - numberOfGuesses} guesses remaining.");
         }
     }
 
