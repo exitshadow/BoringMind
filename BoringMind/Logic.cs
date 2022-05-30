@@ -39,26 +39,9 @@ namespace BoringMind
         // => introduce loops to display dots and select from them instead
         public static Color userColorPicker()
         {
-            string str_userGuess;
             Color userColor;
 
-            do
-            {
-                #region SelectColors
-                Menu.ColorSelectorIterator();
-
-                Console.WriteLine();
-
-                str_userGuess = Console.ReadLine();
-                #endregion
-
-                if (!Enum.TryParse<Color>(str_userGuess, out userColor))
-                {
-                    Console.WriteLine("Oh no, that’s not on the list. Doooo it agaaain!");
-                    Console.WriteLine();
-                }
-
-            } while (!Enum.TryParse<Color>(str_userGuess, out userColor));
+            userColor = Menu.ColorSelectorIterator();
 
             return userColor;
         }

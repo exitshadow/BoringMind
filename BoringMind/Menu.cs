@@ -41,7 +41,7 @@ namespace BoringMind
             //return userColor;
         }
 
-        public static void ColorSelectorIterator()
+        public static Color ColorSelectorIterator()
         {
 
             int selectedIndex = 1;
@@ -83,6 +83,7 @@ namespace BoringMind
 
             Console.WriteLine();
             // Console.WriteLine();
+            return (Color)selectedIndex;
         }
     }
 }
