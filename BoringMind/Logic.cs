@@ -34,18 +34,6 @@ namespace BoringMind
             return computerColors;
         }
 
-
-        // shows list of colors and asks user to select one
-        // => introduce loops to display dots and select from them instead
-        public static Color userColorPicker()
-        {
-            Color userColor;
-
-            userColor = Menu.ColorSelectorIterator();
-
-            return userColor;
-        }
-
         // asks user to pick in list using userColorPicker
         // then controls if color is already picked
         public static Color[] GuessCode()
@@ -54,7 +42,7 @@ namespace BoringMind
 
             for (int i = 0; i < userGuesses.Length; i++)
             {
-                userGuesses[i] = userColorPicker();
+                userGuesses[i] = Menu.ColorSelectorIterator();
                 for (int j = 0; j < userGuesses.Length; j++)
                 {
                     while (userGuesses[i] == userGuesses[j])
@@ -63,7 +51,7 @@ namespace BoringMind
                         j = 0;
                         Console.WriteLine("Oopsie, you already picked that one.");
                         Console.WriteLine();
-                        userGuesses[i] = userColorPicker();
+                        userGuesses[i] = Menu.ColorSelectorIterator();
                     }
 
                 }
